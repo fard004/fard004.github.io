@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiamondCret - Nosotros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e3c72;
+            --secondary-blue: #2a5298;
+            --accent-green: #4CAF50;
+            --light-gray: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Manteniendo el mismo header del diseño original */
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            width: 89px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Values Section */
+        .values-section {
+            background: var(--light-gray);
+            padding: 5rem 2rem;
+        }
+
+        .values-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .values-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .values-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: #666;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            padding: 5rem 2rem;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content h2,
+            .values-header h2 {
+                font-size: 2rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+        }
+
+        .footer {
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        color: white;
+        padding: 4rem 0 0 0;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 0 2rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+
+    .footer-section h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+
+    .footer-section p {
+        color: #fff;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background: white;
+        color: var(--primary-blue);
+        transform: translateY(-3px);
+    }
+
+    .contact-info, .quick-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .contact-info li, .quick-links li {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        color: #fff;
+    }
+
+    .contact-info i {
+        margin-top: 0.3rem;
+    }
+
+    .quick-links a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .quick-links a:hover {
+        color: var(--accent-green);
+        padding-left: 5px;
+    }
+
+    .footer-bottom {
+        margin-top: 3rem;
+        padding: 1.5rem 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom p {
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        
+        .social-links {
+            justify-content: center;
+        }
+        
+        .contact-info li {
+            justify-content: center;
+            text-align: left;
+        }
+        
+        .contact-info {
+            display: inline-block;
+        }
+    }
+    </style>
+</head>
+<body>
+    
+    <nav class="main-nav">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo diamond crete.jpg" alt="DiamondCret">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            
+            <li><a href="#">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    
+    <section class="hero">
+        <h1>Equipos Profesionales para Tratamiento de Pisos</h1>
+        <p>Distribuidores especializados en maquinaria y consumibles de alta calidad para el acabado y mantenimiento de pisos industriales</p>
+    </section>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="/api/placeholder/600/400" alt="Equipos DiamondCret">
+            </div>
+            <div class="about-content">
+                <h2>Nuestra Historia</h2>
+                <p>En DiamondCret, nos hemos consolidado como líderes en la distribución de equipos profesionales para el tratamiento de pisos industriales. Nuestra trayectoria está respaldada por la comercialización de las mejores marcas del mercado.</p>
+                <p>Nos especializamos en la venta de pulidoras, escarificadoras y una amplia gama de consumibles diamantados, ofreciendo a nuestros clientes soluciones completas para sus necesidades de equipamiento.</p>
+                <p>Nuestro compromiso es proporcionar maquinaria de primera calidad, respaldada por asesoría técnica especializada para garantizar la mejor elección según los requerimientos de cada proyecto.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section actualizado -->
+    <section class="values-section">
+        <div class="values-container">
+            <div class="values-header">
+                <h2>Nuestros Valores</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Calidad Garantizada</h3>
+                    <p>Comercializamos únicamente equipos de marcas reconocidas y certificadas internacionalmente.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Especialización</h3>
+                    <p>Conocimiento profundo de cada equipo y sus aplicaciones específicas.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Confiabilidad</h3>
+                    <p>Respaldo y garantía en todos nuestros productos.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Asesoría Técnica</h3>
+                    <p>Orientación experta para la selección del equipo ideal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section actualizado -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>X</h3>
+                <p>Años en el Mercado</p>
+            </div>
+            <div class="stat-item">
+                <h3>X</h3>
+                <p>Equipos Vendidos</p>
+            </div>
+            <div class="stat-item">
+                <h3>X</h3>
+                <p>Modelos Disponibles</p>
+            </div>
+           
+        </div>
+    </section>
+
+    <!-- Footer permanece igual -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DiamondCret</h3>
+                <p>Equipos profesionales para tratamiento de pisos industriales.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i>Jr. Las Caléndulas 692 - Urb. Las Flores de Primavera - San Juan de Lurigancho.</li>
+                    <li><i class="fas fa-phone"></i>924 632 181 / 949 812 503</li>
+                    <li><i class="fas fa-envelope"></i>diamondcret@outlook.com</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul class="quick-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Equipos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 DiamondCret. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
